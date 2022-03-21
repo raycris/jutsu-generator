@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/raycris/jutsu-generator.git/static/css/main.16b2e050.chunk.css",
+    "main.js": "/raycris/jutsu-generator.git/static/js/main.62c8db91.chunk.js",
+    "main.js.map": "/raycris/jutsu-generator.git/static/js/main.62c8db91.chunk.js.map",
+    "runtime-main.js": "/raycris/jutsu-generator.git/static/js/runtime-main.2982b2d3.js",
+    "runtime-main.js.map": "/raycris/jutsu-generator.git/static/js/runtime-main.2982b2d3.js.map",
+    "static/js/2.30002ab1.chunk.js": "/raycris/jutsu-generator.git/static/js/2.30002ab1.chunk.js",
+    "static/js/2.30002ab1.chunk.js.map": "/raycris/jutsu-generator.git/static/js/2.30002ab1.chunk.js.map",
+    "index.html": "/raycris/jutsu-generator.git/index.html",
+    "static/css/main.16b2e050.chunk.css.map": "/raycris/jutsu-generator.git/static/css/main.16b2e050.chunk.css.map",
+    "static/js/2.30002ab1.chunk.js.LICENSE.txt": "/raycris/jutsu-generator.git/static/js/2.30002ab1.chunk.js.LICENSE.txt",
+    "static/media/Uchiha.b4b83b6d.jpg": "/raycris/jutsu-generator.git/static/media/Uchiha.b4b83b6d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2982b2d3.js",
+    "static/js/2.30002ab1.chunk.js",
+    "static/css/main.16b2e050.chunk.css",
+    "static/js/main.62c8db91.chunk.js"
+  ]
+}
