@@ -1,28 +1,26 @@
-import React from "react";
+import React, { useState, useContext} from "react";
 import { TodoContext } from "../TodoContext";
 
-import './TodoForm.css'
+import "./TodoForm.css";
+import Uchiha from "../image/Uchiha.jpg"
 
 function TodoForm() {
-  const [newTodoValue, setNewTodoValue] = React.useState('')
+  const [newTodoValue, setNewTodoValue] = useState("");
 
-  const {
-    addTodo,
-    setOpenModal,
-  } = React.useContext(TodoContext)
+  const { addTodo, setOpenModal } = useContext(TodoContext);
   const onCancel = () => {
-    setOpenModal(false)
-  }
+    setOpenModal(false);
+  };
   const onChange = (event) => {
-    setNewTodoValue(event.target.value)
-  }
+    setNewTodoValue(event.target.value);
+  };
   const onSubmit = (event) => {
-    event.preventDefault()
-    addTodo(newTodoValue)
-    setOpenModal(false)
-  }
+    event.preventDefault();
+    addTodo(newTodoValue);
+    setOpenModal(false);
+  };
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} style={{backgroundImage: `url(${Uchiha})`}}>
       <label>Escribe un Jutsu nuevo</label>
       <textarea
         value={newTodoValue}
@@ -40,13 +38,13 @@ function TodoForm() {
         <button
           className="TodoForm-button TodoForm-button-add"
           type="submit"
-        // onClick={onAdd}
+          // onClick={onAdd}
         >
           Anadir
         </button>
       </div>
     </form>
-  )
+  );
 }
 
-export { TodoForm }
+export { TodoForm };
