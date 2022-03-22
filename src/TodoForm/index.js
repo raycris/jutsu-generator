@@ -1,13 +1,11 @@
-import React, { useState, useContext} from "react";
-import { TodoContext } from "../TodoContext";
+import React, { useState } from "react";
 
 import "./TodoForm.css";
-import Uchiha from "../image/Uchiha.jpg"
+import Uchiha from "../image/Uchiha.jpg";
 
-function TodoForm() {
+function TodoForm({ addTodo, setOpenModal }) {
   const [newTodoValue, setNewTodoValue] = useState("");
 
-  const { addTodo, setOpenModal } = useContext(TodoContext);
   const onCancel = () => {
     setOpenModal(false);
   };
@@ -20,7 +18,7 @@ function TodoForm() {
     setOpenModal(false);
   };
   return (
-    <form onSubmit={onSubmit} style={{backgroundImage: `url(${Uchiha})`}}>
+    <form onSubmit={onSubmit} style={{ backgroundImage: `url(${Uchiha})` }}>
       <label>Escribe un Jutsu nuevo</label>
       <textarea
         value={newTodoValue}

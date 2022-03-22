@@ -49,8 +49,8 @@ textarea:focus {
 }
 
 .TodoForm-button {
+  color: #f0f3fa;
   width: 120px;
-  color: #202329;
   height: 48px;
   border: none;
   cursor: pointer;
