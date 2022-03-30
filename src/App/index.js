@@ -15,22 +15,27 @@ import { TodosLoading } from "../TodoLoading";
 import { CreateTodoButton } from "../CreateTodoButton";
 
 function App() {
+  const { states, updateState } = useTodos();
+
   const {
     error,
-    addTodo,
     loading,
     openModal,
     totalTodos,
-    deleteTodo,
     searchValue,
-    setOpenModal,
-    completeTodo,
     searchedTodos,
     completedTodos,
+  } = states;
+
+  const {
+    addTodo,
+    deleteTodo,
+    setOpenModal,
+    completeTodo,
     setSearchValue,
     sincronizeTodos,
-  } = useTodos();
-
+  } = updateState;
+  
   return (
     <React.Fragment>
       <TodoHeader loading={loading}>
@@ -50,7 +55,6 @@ function App() {
         onEmptySearchResults={(searchText) => (
           <p>No hay resultado para {searchText}</p>
         )}
-      
       >
         {(todo) => (
           <TodoItem
@@ -70,7 +74,7 @@ function App() {
       )}
 
       <CreateTodoButton setOpenModal={setOpenModal} />
-      <ChangeAlert sincronize={sincronizeTodos}/>
+      <ChangeAlert sincronize={sincronizeTodos} />
     </React.Fragment>
   );
 }
