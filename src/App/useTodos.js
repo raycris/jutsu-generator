@@ -9,8 +9,9 @@ function useTodos() {
     saveItem: saveTodos,
     sincronizeItem: sincronizeTodos,
   } = useLocalStorage("Todos_v1", []);
-  const [searchValue, setSearchValue] = useState("");
+
   const [openModal, setOpenModal] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;

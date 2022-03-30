@@ -1,7 +1,7 @@
 import React from "react";
-import { useTodos } from "./useTodos";
 
 import { Modal } from "../Modal";
+import { useTodos } from "./useTodos";
 import { TodoItem } from "../TodoItem";
 import { TodoList } from "../TodoList";
 import { TodoForm } from "../TodoForm";
@@ -10,9 +10,9 @@ import { TodosError } from "../TodosError";
 import { TodoHeader } from "../TodoHeader";
 import { EmptyTodos } from "../EmptyTodos";
 import { TodoCounter } from "../TodoCounter";
+import { ChangeAlert } from "../ChangeAlert";
 import { TodosLoading } from "../TodoLoading";
 import { CreateTodoButton } from "../CreateTodoButton";
-import { ChangeAlert } from "../ChangeAlert";
 
 function App() {
   const {
@@ -50,15 +50,7 @@ function App() {
         onEmptySearchResults={(searchText) => (
           <p>No hay resultado para {searchText}</p>
         )}
-        // render={(todo) => (
-        //   <TodoItem
-        //     key={todo.text}
-        //     text={todo.text}
-        //     completed={todo.completed}
-        //     onComplete={() => completeTodo(todo.text)}
-        //     onDelete={() => deleteTodo(todo.text)}
-        //   />
-        // )}
+      
       >
         {(todo) => (
           <TodoItem
