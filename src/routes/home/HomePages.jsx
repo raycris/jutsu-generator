@@ -1,20 +1,20 @@
 import React from "react";
 
-import { Modal } from "../Modal";
-import { useTodos } from "./useTodos";
-import { TodoItem } from "../TodoItem";
-import { TodoList } from "../TodoList";
-import { TodoForm } from "../TodoForm";
-import { TodoSearch } from "../TodoSearch";
-import { TodosError } from "../TodosError";
-import { TodoHeader } from "../TodoHeader";
-import { EmptyTodos } from "../EmptyTodos";
-import { TodoCounter } from "../TodoCounter";
-import { ChangeAlert } from "../ChangeAlert";
-import { TodosLoading } from "../TodoLoading";
-import { CreateTodoButton } from "../CreateTodoButton";
+import { Modal } from "../../components/Modal";
+import useTodos from "../useTodos";
+import { TodoItem } from "../../components/TodoItem";
+import { TodoList } from "../../components/TodoList";
+import { TodoForm } from "../../components/TodoForm";
+import { TodoSearch } from "../../components/TodoSearch";
+import { TodosError } from "../../components/TodosError";
+import { TodoHeader } from "../../components/TodoHeader";
+import { EmptyTodos } from "../../components/EmptyTodos";
+import { TodoCounter } from "../../components/TodoCounter";
+import { ChangeAlert } from "../../components/ChangeAlert";
+import { TodosLoading } from "../../components/TodoLoading";
+import { CreateTodoButton } from "../../components/CreateTodoButton";
 
-function App() {
+function HomePage() {
   const { states, updateState } = useTodos();
 
   const {
@@ -37,7 +37,7 @@ function App() {
   } = updateState;
   
   return (
-    <React.Fragment>
+    <>
       <TodoHeader loading={loading}>
         <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
         <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
@@ -75,8 +75,8 @@ function App() {
 
       <CreateTodoButton setOpenModal={setOpenModal} />
       <ChangeAlert sincronize={sincronizeTodos} />
-    </React.Fragment>
+    </>
   );
 }
 
-export default App;
+export default HomePage;

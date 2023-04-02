@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
+import Uchiha from "../../assets/image/Uchiha.jpg";
 import "./TodoForm.css";
-import Uchiha from "../image/Uchiha.jpg";
 
 function TodoForm({ addTodo, setOpenModal }) {
   const [newTodoValue, setNewTodoValue] = useState("");
