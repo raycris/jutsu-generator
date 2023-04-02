@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Modal } from "../../components/Modal";
 import useTodos from "../useTodos";
+import { Modal } from "../../components/Modal";
 import { TodoItem } from "../../components/TodoItem";
 import { TodoList } from "../../components/TodoList";
 import { TodoForm } from "../../components/TodoForm";
