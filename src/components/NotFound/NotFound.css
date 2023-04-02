@@ -1,0 +1,11 @@
+.image{
+  width: 100%;
+  height: 100vh;
+  background: url("../../assets/image/Uchiha.jpg");
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-size: cover;
+  background-color: hsla(0, 0, 0, 0.55);
+  background-repeat: no-repeat;
+}
