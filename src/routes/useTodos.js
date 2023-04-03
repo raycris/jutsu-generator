@@ -10,7 +10,6 @@ function useTodos() {
     sincronizeItem: sincronizeTodos,
   } = useLocalStorage("Todos_v2", []);
 
-  const [openModal, setOpenModal] = useState(false);
   const [searchValue, setSearchValue] = useState("");
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
@@ -40,11 +39,19 @@ function useTodos() {
     });
     saveTodos(newTodos);
   };
-  // Funcion para marcar los todos completados
+  // Funcion para marcar los jutsus completados
   const completeTodo = (id) => {
     const todoIndex = todos.findIndex((todo) => todo.id === id);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = true;
+    saveTodos(newTodos);
+  };
+
+  // Funcion para editat los jutsus completados
+  const editTodo = (id, newText) => {
+    const todoIndex = todos.findIndex((todo) => todo.id === id);
+    const newTodos = [...todos];
+    newTodos[todoIndex].text = newText;
     saveTodos(newTodos);
   };
 
@@ -68,7 +75,6 @@ function useTodos() {
   const states = {
     error,
     loading,
-    openModal,
     totalTodos,
     searchValue,
     searchedTodos,
@@ -78,7 +84,7 @@ function useTodos() {
   const updateState = {
     addTodo,
     deleteTodo,
-    setOpenModal,
+    editTodo,
     completeTodo,
     setSearchValue,
     sincronizeTodos,

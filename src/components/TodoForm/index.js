@@ -12,14 +12,20 @@ function TodoForm(props) {
   const onCancel = () => {
     navigate("/")
   };
+
+
   const onChange = (event) => {
     setNewTodoValue(event.target.value);
   };
+
+
   const onSubmit = (event) => {
     event.preventDefault();
-    navigate("/")
     props.submitEvent(newTodoValue);
+    navigate("/")
   };
+
+
   return (
     <form onSubmit={onSubmit} style={{ backgroundImage: `url(${Uchiha})` }}>
       <label>{props.label}</label>
@@ -39,7 +45,7 @@ function TodoForm(props) {
         <button
           className="TodoForm-button TodoForm-button-add"
           type="submit"
-          // onClick={onAdd}
+          onClick={onSubmit}
         >
           {props.buttonLabel}
         </button>
