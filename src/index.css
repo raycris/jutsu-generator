@@ -1,9 +1,7 @@
 body {
-  margin: 0;
-  padding: 0;
-  background: #db5252;
-  /* background-image: "./src/image/Uchiha.jpg"; */
   color: #1E1E1F;
+  margin: 0;
+  background: #db5252;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 

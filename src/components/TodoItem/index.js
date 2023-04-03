@@ -1,4 +1,6 @@
 import React from "react";
+
+import Kakashi from "../../assets/Icons/kakashi.svg"
 import "./TodoItem.css";
 
 function TodoItem(props) {
@@ -16,6 +18,13 @@ function TodoItem(props) {
       <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
         {props.text}
       </p>
+
+      <span className="Icon Icon-edit" onClick={props.onEdit}>
+        <img
+          src={Kakashi}
+          alt="Kakashi Sensei"
+        />
+      </span>
 
       <span className="Icon Icon-delete" onClick={props.onDelete}>
         <img

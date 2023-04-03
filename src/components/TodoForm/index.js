@@ -38,7 +38,7 @@ function TodoForm({ addTodo, setOpenModal }) {
           type="submit"
           // onClick={onAdd}
         >
-          Anadir
+          Añadir
         </button>
       </div>
     </form>
