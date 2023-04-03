@@ -8,7 +8,7 @@ function useTodos() {
     item: todos,
     saveItem: saveTodos,
     sincronizeItem: sincronizeTodos,
-  } = useLocalStorage("Todos_v1", []);
+  } = useLocalStorage("Todos_v2", []);
 
   const [openModal, setOpenModal] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -31,27 +31,38 @@ function useTodos() {
 
   // Funcion para anadir los todos completados
   const addTodo = (text) => {
+    const id = newTodoId(todos);
     const newTodos = [...todos];
     newTodos.push({
       completed: false,
       text,
+      id,
     });
     saveTodos(newTodos);
   };
   // Funcion para marcar los todos completados
-  const completeTodo = (text) => {
-    const todoIndex = todos.findIndex((todo) => todo.text === text);
+  const completeTodo = (id) => {
+    const todoIndex = todos.findIndex((todo) => todo.id === id);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = true;
     saveTodos(newTodos);
   };
 
   // Funcion para marcar los todos eliminados
-  const deleteTodo = (text) => {
-    const todoIndex = todos.findIndex((todo) => todo.text === text);
+  const deleteTodo = (id) => {
+    const todoIndex = todos.findIndex((todo) => todo.id === id);
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
     saveTodos(newTodos);
+  };
+
+  const newTodoId = (todoList) => {
+    if (!todoList.length) {
+      return 1;
+    }
+    const idList = todoList.map((todo) => todo.id);
+    const idMax = Math.max(...idList);
+    return idMax + 1;
   };
 
   const states = {
