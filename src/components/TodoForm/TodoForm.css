@@ -5,8 +5,9 @@ form {
   max-width: 300px;
   align-content: center;
   border-radius: 6px;
+  justify-content: center;
   flex-direction: column;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 label {

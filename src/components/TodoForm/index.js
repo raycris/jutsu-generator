@@ -1,25 +1,28 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Uchiha from "../../assets/image/Uchiha.jpg";
+
 import "./TodoForm.css";
 
-function TodoForm({ addTodo, setOpenModal }) {
+function TodoForm(props) {
   const [newTodoValue, setNewTodoValue] = useState("");
+  const navigate = useNavigate()
 
   const onCancel = () => {
-    setOpenModal(false);
+    navigate("/")
   };
   const onChange = (event) => {
     setNewTodoValue(event.target.value);
   };
   const onSubmit = (event) => {
     event.preventDefault();
-    addTodo(newTodoValue);
-    setOpenModal(false);
+    navigate("/")
+    props.submitEvent(newTodoValue);
   };
   return (
     <form onSubmit={onSubmit} style={{ backgroundImage: `url(${Uchiha})` }}>
-      <label>Escribe un Jutsu nuevo</label>
+      <label>{props.label}</label>
       <textarea
         value={newTodoValue}
         onChange={onChange}
@@ -38,7 +41,7 @@ function TodoForm({ addTodo, setOpenModal }) {
           type="submit"
           // onClick={onAdd}
         >
-          Añadir
+          {props.buttonLabel}
         </button>
       </div>
     </form>
