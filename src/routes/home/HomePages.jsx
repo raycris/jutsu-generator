@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 import useTodos from "../useTodos";
 
@@ -18,7 +18,8 @@ import { CreateTodoButton } from "../../components/CreateTodoButton";
 
 function HomePage() {
   const { states, updateState } = useTodos();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  
 
   const {
     error,
@@ -38,7 +39,7 @@ function HomePage() {
     setSearchValue,
     sincronizeTodos,
   } = updateState;
-  
+
   return (
     <>
       <TodoHeader loading={loading}>
@@ -60,11 +61,14 @@ function HomePage() {
         )}
       >
         {(todo) => (
+          // en el onEdit estamos mandando información hacia esa ruta con el state
           <TodoItem
             key={todo.id}
             text={todo.text}
             completed={todo.completed}
-            onEdit={() => navigate(`/edit/${todo.id}`)}
+            onEdit={() => {
+              navigate(`/edit/${todo.id}`, { state: { todo } });
+            }}
             onComplete={() => completeTodo(todo.id)}
             onDelete={() => deleteTodo(todo.id)}
           />
@@ -77,7 +81,7 @@ function HomePage() {
         </Modal>
       )} */}
 
-      <CreateTodoButton onClick={() => navigate('/new')} />
+      <CreateTodoButton onClick={() => navigate("/new")} />
       <ChangeAlert sincronize={sincronizeTodos} />
     </>
   );
