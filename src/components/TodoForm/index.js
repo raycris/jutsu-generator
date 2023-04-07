@@ -6,7 +6,7 @@ import Uchiha from "../../assets/image/Uchiha.jpg";
 import "./TodoForm.css";
 
 function TodoForm(props) {
-  const [newTodoValue, setNewTodoValue] = useState("");
+  const [newTodoValue, setNewTodoValue] = useState(props.defaultJutsuText || "");
   const navigate = useNavigate()
 
   const onCancel = () => {

@@ -28,6 +28,8 @@ function useTodos() {
     });
   }
 
+ 
+
   // Funcion para anadir los todos completados
   const addTodo = (text) => {
     const id = newTodoId(todos);
@@ -46,6 +48,12 @@ function useTodos() {
     newTodos[todoIndex].completed = true;
     saveTodos(newTodos);
   };
+
+  const  getTodo = (id) => {
+    const todoIndex = todos.findIndex((todo) => todo.id === id);
+    return todos[todoIndex]
+
+  }
 
   // Funcion para editat los jutsus completados
   const editTodo = (id, newText) => {
@@ -79,6 +87,7 @@ function useTodos() {
     searchValue,
     searchedTodos,
     completedTodos,
+    getTodo,
   };
 
   const updateState = {
