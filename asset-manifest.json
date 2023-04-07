@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/raycris/jutsu-generator.git/static/css/main.015844ba.css",
-    "main.js": "/raycris/jutsu-generator.git/static/js/main.f3aeda18.js",
-    "static/media/Uchiha.jpg": "/raycris/jutsu-generator.git/static/media/Uchiha.b4b83b6dd52efc6a3894.jpg",
-    "static/media/kakashi.svg": "/raycris/jutsu-generator.git/static/media/kakashi.0fc570525383280f82631dc50ce17346.svg",
-    "index.html": "/raycris/jutsu-generator.git/index.html",
-    "main.015844ba.css.map": "/raycris/jutsu-generator.git/static/css/main.015844ba.css.map",
-    "main.f3aeda18.js.map": "/raycris/jutsu-generator.git/static/js/main.f3aeda18.js.map"
+    "main.css": "/jutsu-generator.git/static/css/main.3ba7210e.css",
+    "main.js": "/jutsu-generator.git/static/js/main.0b870d7f.js",
+    "static/media/Uchiha.jpg": "/jutsu-generator.git/static/media/Uchiha.b4b83b6dd52efc6a3894.jpg",
+    "static/media/kakashi.svg": "/jutsu-generator.git/static/media/kakashi.0fc570525383280f82631dc50ce17346.svg",
+    "index.html": "/jutsu-generator.git/index.html",
+    "main.3ba7210e.css.map": "/jutsu-generator.git/static/css/main.3ba7210e.css.map",
+    "main.0b870d7f.js.map": "/jutsu-generator.git/static/js/main.0b870d7f.js.map"
   },
   "entrypoints": [
-    "static/css/main.015844ba.css",
-    "static/js/main.f3aeda18.js"
+    "static/css/main.3ba7210e.css",
+    "static/js/main.0b870d7f.js"
   ]
 }
