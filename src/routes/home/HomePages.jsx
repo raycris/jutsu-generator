@@ -1,12 +1,10 @@
 import React from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import useTodos from "../useTodos";
 
-// import { Modal } from "../../components/Modal";
 import { TodoItem } from "../../components/TodoItem";
 import { TodoList } from "../../components/TodoList";
-// import { TodoForm } from "../../components/TodoForm";
 import { TodoSearch } from "../../components/TodoSearch";
 import { TodosError } from "../../components/TodosError";
 import { TodoHeader } from "../../components/TodoHeader";
@@ -19,32 +17,30 @@ import { CreateTodoButton } from "../../components/CreateTodoButton";
 function HomePage() {
   const { states, updateState } = useTodos();
   const navigate = useNavigate();
-  
+  const [params, setParams] = useSearchParams();
 
   const {
     error,
     loading,
-    // openModal,
     totalTodos,
     searchValue,
     searchedTodos,
     completedTodos,
   } = states;
 
-  const {
-    // addTodo,
-    deleteTodo,
-    // setOpenModal,
-    completeTodo,
-    setSearchValue,
-    sincronizeTodos,
-  } = updateState;
+  const { deleteTodo, completeTodo, setSearchValue, sincronizeTodos } =
+    updateState;
 
   return (
     <>
       <TodoHeader loading={loading}>
         <TodoCounter totalTodos={totalTodos} completedTodos={completedTodos} />
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+        <TodoSearch
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+          params={params}
+          setParams={setParams}
+        />
       </TodoHeader>
 
       <TodoList
@@ -74,12 +70,6 @@ function HomePage() {
           />
         )}
       </TodoList>
-
-      {/* {openModal && (
-        <Modal>
-          <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
-        </Modal>
-      )} */}
 
       <CreateTodoButton onClick={() => navigate("/new")} />
       <ChangeAlert sincronize={sincronizeTodos} />
